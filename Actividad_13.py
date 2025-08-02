@@ -1,8 +1,24 @@
 #SISTEMA DE GESTIÓN ACADÉMICA
+estudiante={}
 def menu_principal():
     print("---MENÚ DE GESTIÓN ACADÉMICA---")
     print("1.Agregar Estudiate.\n2.Agregar curso con nota.\n3.Consultar Estudiante")
     print("4.Calcular promedio de estudiante\n5.Verificar si aprueba\n6.Mostrar todos los estudiantes.\n7.Salir")
+
+def agregar_estudiantes():
+    id= input("Ingrese ID del estudiante:")
+    nombre=input("Ingrese nombre del estudiante:")
+    carrera= input("Ingrese carrera o programa academico:")
+
+    estudiante[id]={
+        "id":id,
+        "nombre":nombre,
+        "carrera":carrera,
+        "cursos":{}
+    }
+
+    return id,nombre,carrera
+
 
 menu_principal()
 opcion= input("Ingrese una opcion:")
