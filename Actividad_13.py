@@ -19,6 +19,22 @@ def agregar_estudiantes():
 
     return id,nombre,carrera
 
+def agregar_curso():
+    id= input("Ingrese id de estudiante:")
+    if id in estudiante:
+        nombre_curso=input("Ingrese nombre de curso:")
+        try:
+            nota= float(input("Ingrese nota final:"))
+        except ValueError:
+            print("Error: Ingrese numeros validos.")
+        else:
+            if nota <0 or nota >100:
+                print("Nota no valida...")
+            else:
+                estudiante[id]["cursos"][nombre_curso] = nota
+                return nota,nombre_curso
+    else:
+        print("Estudiante no encontrado...")
 
 menu_principal()
 opcion= input("Ingrese una opcion:")
@@ -38,4 +54,3 @@ match opcion:
         print("---MOSTAR TODOS LOS ESTUDIANTES---")
     case "7":
         print("saliendo del sistema...")
-        break
